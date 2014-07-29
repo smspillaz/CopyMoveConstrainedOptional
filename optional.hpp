@@ -671,7 +671,7 @@ public:
     return this->data();
   }
 
-  constexpr auto operator*() const noexcept -> const T&
+  auto operator*() const noexcept -> const T&
   {
     return (assert(this->is_initialized()), this->data());
   }
