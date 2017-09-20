@@ -225,9 +225,9 @@ using is_equivalent = std::is_same<
 
 // Ideally we would use the official is_trivially_copyable trait here:
 template<class T, bool = and_<
-  is_trivially_copy_constructible<T>,
-  is_trivially_copy_assignable<typename std::remove_cv<T>::type>,
-  is_trivially_destructible<T>
+  std::is_trivially_copy_constructible<T>,
+  std::is_trivially_copy_assignable<typename std::remove_cv<T>::type>,
+  std::is_trivially_destructible<T>
  >::value
 >
 class optional_data;
